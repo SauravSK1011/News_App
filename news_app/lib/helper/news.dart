@@ -1,13 +1,25 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_config/flutter_config.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:news_app/modal/artical_modal.dart';
 import 'package:http/http.dart' as http;
+
+// geeting() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await FlutterConfig.loadEnvVariables();
+//   late String apiKey = FlutterConfig.get("API_KEY");
+// }
 
 class News {
   List<ArticalModel> news = [];
   Future<void> getNews() async {
+    // geeting();
+    String? apiKey = dotenv.env["API_KEY"];
+
     String url =
-        "https://newsapi.org/v2/top-headlines?country=in&apiKey=7cf91b89d64840019abd37d59bff112f";
+        "https://newsapi.org/v2/top-headlines?country=in&apiKey=$apiKey";
     var responce = await http.get(Uri.parse(url));
     var jsondata = jsonDecode(responce.body);
     if (jsondata["status"] == "ok") {
@@ -35,8 +47,11 @@ class News {
 class CategoryNewsClass {
   List<ArticalModel> news = [];
   Future<void> getNews(String category) async {
+    // geeting();
+    String? apiKey = dotenv.env["API_KEY"];
+
     String url =
-        "https://newsapi.org/v2/top-headlines?country=in&category=$category&apiKey=7cf91b89d64840019abd37d59bff112f";
+        "https://newsapi.org/v2/top-headlines?country=in&category=$category&apiKey=$apiKey";
     var responce = await http.get(Uri.parse(url));
     var jsondata = jsonDecode(responce.body);
     if (jsondata["status"] == "ok") {
