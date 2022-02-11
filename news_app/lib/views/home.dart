@@ -3,6 +3,7 @@ import 'package:news_app/helper/data.dart';
 import 'package:news_app/helper/news.dart';
 import 'package:news_app/modal/artical_modal.dart';
 import 'package:news_app/modal/carogry_modal.dart';
+import 'package:news_app/views/query_view.dart';
 import 'package:news_app/widget/blog_tile.dart';
 import 'package:news_app/widget/card_tile.dart';
 
@@ -58,9 +59,41 @@ class _HomeState extends State<Home> {
               ),
             )
           : SingleChildScrollView(
-            child: Container( color: Colors.white70,
-              child: Column(
+              child: Container(
+                color: Colors.white70,
+                child: Column(
                   children: [
+                    Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: TextField(
+                        onSubmitted: (value) => {Navigator.push(context,
+            MaterialPageRoute(builder: (context) => QueryNewsPage(queryname: value,)))},
+                        textAlign: TextAlign.center,
+                        // onChanged: (text) => {
+                        //   print(text),
+                        // },
+                        // controller: searchCtrl,
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          hintText: 'Search',
+                          hintStyle: TextStyle(fontSize: 16),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: BorderSide(
+                              width: 0,
+                              style: BorderStyle.none,
+                            ),
+                          ),
+                          filled: true,
+                          contentPadding: EdgeInsets.all(16),
+                          // fillColor: colorSearchBg,
+                        ),
+                      ),
+                    ),
+                    // IconButton(
+                    //   onPressed: () {},
+                    //   icon: Icon(Icons.search),
+                    // ),
                     Container(
                       height: 70,
                       child: ListView.builder(
@@ -93,8 +126,8 @@ class _HomeState extends State<Home> {
                     ),
                   ],
                 ),
+              ),
             ),
-          ),
     );
   }
 }
