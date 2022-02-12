@@ -18,6 +18,7 @@ class _HomeState extends State<Home> {
   List<CategoryModel> caterorys = [];
   List<ArticalModel> articalsnews = [];
   bool _loding = true;
+  bool _folded = true;
   @override
   void initState() {
     // TODO: implement initState
@@ -63,30 +64,106 @@ class _HomeState extends State<Home> {
                 color: Colors.white70,
                 child: Column(
                   children: [
+                    // Padding(
+                    //   padding: const EdgeInsets.all(18.0),
+                    //   child: TextField(
+                    //     onSubmitted: (value) => {
+                    //       Navigator.push(
+                    //           context,
+                    //           MaterialPageRoute(
+                    //               builder: (context) => QueryNewsPage(
+                    //                     queryname: value,
+                    //                   )))
+                    //     },
+                    //     textAlign: TextAlign.center,
+                    //     // onChanged: (text) => {
+                    //     //   print(text),
+                    //     // },
+                    //     // controller: searchCtrl,
+                    //     keyboardType: TextInputType.text,
+                    //     decoration: InputDecoration(
+                    //       hintText: 'Search',
+                    //       hintStyle: TextStyle(fontSize: 16),
+                    //       border: OutlineInputBorder(
+                    //         borderRadius: BorderRadius.circular(8),
+                    //         borderSide: BorderSide(
+                    //           width: 0,
+                    //           style: BorderStyle.none,
+                    //         ),
+                    //       ),
+                    //       filled: true,
+                    //       contentPadding: EdgeInsets.all(16),
+                    //       // fillColor: colorSearchBg,
+                    //     ),
+                    //   ),
+                    // ),
+
                     Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: TextField(
-                        onSubmitted: (value) => {Navigator.push(context,
-            MaterialPageRoute(builder: (context) => QueryNewsPage(queryname: value,)))},
-                        textAlign: TextAlign.center,
-                        // onChanged: (text) => {
-                        //   print(text),
-                        // },
-                        // controller: searchCtrl,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          hintText: 'Search',
-                          hintStyle: TextStyle(fontSize: 16),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(
-                              width: 0,
-                              style: BorderStyle.none,
+                      padding: const EdgeInsets.all(8.0),
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 400),
+                        width: _folded ? 56 : 300,
+                        height: 56,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(32),
+                          color: Colors.white,
+                          boxShadow: kElevationToShadow[6],
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: Container(
+                                padding: EdgeInsets.only(left: 10),
+                                child: !_folded
+                                    ? TextField(
+                                        // onChanged: (value) => {print(value)},
+                                        onSubmitted: (value) => {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      QueryNewsPage(
+                                                        queryname: value,
+                                                      )))
+                                        },
+                                        decoration: InputDecoration(
+                                            hintText: "Search",
+                                            hintStyle: TextStyle(
+                                                color: Colors.blue[300]),
+                                            border: InputBorder.none),
+                                      )
+                                    : null,
+                              ),
                             ),
-                          ),
-                          filled: true,
-                          contentPadding: EdgeInsets.all(16),
-                          // fillColor: colorSearchBg,
+                            AnimatedContainer(
+                              duration: Duration(milliseconds: 400),
+                              child: Material(
+                                type: MaterialType.transparency,
+                                child: InkWell(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft:
+                                          Radius.circular(_folded ? 32 : 0),
+                                      topRight: Radius.circular(32),
+                                      bottomLeft:
+                                          Radius.circular(_folded ? 32 : 0),
+                                      bottomRight: Radius.circular(32)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: Icon(
+                                      _folded ? Icons.search : Icons.close,
+                                      color: Colors.blue[900],
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    setState(() {
+                                      _folded = !_folded;
+                                    });
+                                  },
+                                ),
+                              ),
+                            )
+                          ],
                         ),
                       ),
                     ),

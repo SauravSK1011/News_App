@@ -81,7 +81,7 @@ class Search {
     // geeting();
     String? apiKey = dotenv.env["API_KEY"];
 
-    String url ="https://newsapi.org/v2/everything?q=$query&sortBy=publishedAt&apiKey=$apiKey";
+    String url ="https://newsapi.org/v2/top-headlines?q=$query&sortBy=publishedAt&apiKey=$apiKey";
     var responce = await http.get(Uri.parse(url));
     var jsondata = jsonDecode(responce.body);
     if (jsondata["status"] == "ok") {
