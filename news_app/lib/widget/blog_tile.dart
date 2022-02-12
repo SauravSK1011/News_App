@@ -68,13 +68,6 @@ class BlogTileHomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              // Padding(
-              //   padding: const EdgeInsets.only(
-              //       bottom: 10, right: 10, left: 10, top: 4),
-              //   child: Align(
-              //       alignment: Alignment.center,
-              //       child: Container(width: width1, child: Text(dec))),
-              // ),
             ],
           ),
         ),

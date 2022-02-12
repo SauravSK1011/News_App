@@ -25,7 +25,6 @@ class _CatgoryNewsPagewithurlState extends State<CatgoryNewsPagewithurl> {
   }
 
   grtNews() async {
-    String? apiKey = dotenv.env["API_KEY"];
     Withlink newsclass = Withlink();
     await newsclass.getNews(widget.url1);
     articalsnews = newsclass.withlink;

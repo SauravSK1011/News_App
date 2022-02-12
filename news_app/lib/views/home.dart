@@ -140,19 +140,6 @@ class _HomeState extends State<Home> {
                                           fontSize: 25,
                                           fontWeight: FontWeight.bold),
                                     )),
-                                // ElevatedButton(
-                                //   style: ElevatedButton.styleFrom(
-                                //     shape: new RoundedRectangleBorder(
-                                //       borderRadius:
-                                //           new BorderRadius.circular(30.0),
-                                //     ),
-                                //   ),
-                                //   onPressed: () {},
-                                //   child: Text(
-                                //     "View More",
-                                //     style: TextStyle(fontSize: 10),
-                                //   ),
-                                // )
                                 InkWell(
                                   child: const Align(
                                     alignment: Alignment.centerRight,
