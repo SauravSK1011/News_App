@@ -9,7 +9,7 @@ List<CategoryModel> getCategories(){
 
 //  categoryModel = new CategoryModel();
   categoryModel.name = "Business";
-  categoryModel.imgurl = "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80";
+  categoryModel.imgurl = "https://image.shutterstock.com/image-photo/business-people-shaking-hands-finishing-600w-420967090.jpg";
   category.add(categoryModel);
 
   //2
