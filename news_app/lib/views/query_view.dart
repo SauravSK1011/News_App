@@ -12,7 +12,7 @@ class QueryNewsPage extends StatefulWidget {
 }
 
 class _QueryNewsPageState extends State<QueryNewsPage> {
-    List<ArticalModel> articalsnews = [];
+  List<ArticalModel> articalsnews = [];
   bool _loding = true;
   @override
   void initState() {
@@ -78,7 +78,7 @@ class _QueryNewsPageState extends State<QueryNewsPage> {
                   physics: ClampingScrollPhysics(),
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) {
-                    return BlogTile(
+                    return BlogTileHomeScreen(
                       title: articalsnews[index].title,
                       img: articalsnews[index].urlToImage,
                       dec: articalsnews[index].description,

@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:news_app/helper/news.dart';
 import 'package:news_app/modal/artical_modal.dart';
 import 'package:news_app/widget/blog_tile.dart';
 import 'package:news_app/widget/searchbar.dart';
 
-class CatgoryNewsPage extends StatefulWidget {
-  const CatgoryNewsPage({Key? key, @required this.catgoryname})
+class CatgoryNewsPagewithurl extends StatefulWidget {
+  const CatgoryNewsPagewithurl({Key? key, @required this.url1})
       : super(key: key);
-  final catgoryname;
+  final url1;
+
   @override
-  _CatgoryNewsPageState createState() => _CatgoryNewsPageState();
+  _CatgoryNewsPagewithurlState createState() => _CatgoryNewsPagewithurlState();
 }
 
-class _CatgoryNewsPageState extends State<CatgoryNewsPage> {
+class _CatgoryNewsPagewithurlState extends State<CatgoryNewsPagewithurl> {
   List<ArticalModel> articalsnews = [];
   bool _loding = true;
   bool _folded = true;
@@ -23,9 +25,10 @@ class _CatgoryNewsPageState extends State<CatgoryNewsPage> {
   }
 
   grtNews() async {
-    CategoryNewsClass newsclass = CategoryNewsClass();
-    await newsclass.getNews(widget.catgoryname.toString().toLowerCase());
-    articalsnews = newsclass.news;
+    String? apiKey = dotenv.env["API_KEY"];
+    Withlink newsclass = Withlink();
+    await newsclass.getNews(widget.url1);
+    articalsnews = newsclass.withlink;
     setState(() {
       _loding = false;
     });
@@ -73,7 +76,10 @@ class _CatgoryNewsPageState extends State<CatgoryNewsPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SearchBar(),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
+              child: SearchBar(),
+            ),
             _loding
                 ? Center(
                     child: Container(
