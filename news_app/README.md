@@ -1,11 +1,9 @@
 # **News App**
-
-![](Home_page_img.png)
-![](Home_page_img2.png)
-![](Search_img.png)
-![](img1.png)
-![](img2.png)
-![](img3.png)
+<img src=Home_page_img.png width="200"> <img src=Home_page_img2.png width="200">
+<img src=Search_img.png width="200">
+<img src=img1.png width="200">
+<img src=img2.png width="200">
+<img src=img3.png width="200">
 
 
 ## About this project
