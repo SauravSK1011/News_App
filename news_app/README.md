@@ -1,16 +1,42 @@
-# news_app
+# **News App**
 
-A new Flutter project.
+![](Home_page_img.png)
+![](Home_page_img2.png)
+![](Search_img.png)
+![](img1.png)
+![](img2.png)
+![](img3.png)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## About this project
+This is a News App created using Flutter and NewsApi.\
+In This Flutter News App user can see top headlines on the home page and user have 4 options search, categories, news in india, news in wrold
+using this app user can Follow the latest news.
 
-A few resources to get you started if this is your first Flutter project:
+ <font size="4"> **Build With**</font> 
+ - [Flutter](https://flutter.dev/)
+ - [Newsapi](https://newsapi.org/)
+ - [webview_flutter](https://pub.dev/packages/webview_flutter)
+ - [cached_network_image](https://pub.dev/packages/cached_network_image)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Installation
+
+Cloning this repository
+
+```bash
+  $ git clone https://github.com/SauravSK1011/News_App.git
+```
+**Installing dependencies**
+```bash
+flutter pub get
+```
+ Go to [NewsAPI](https://newsapi.org/), register and get an API Key. Then create a .env file at the project root and paste your API Key in an API_KEY variable.
+ ```bash
+API_KEY=<YOUR_API_KEY>
+```
+With all dependencies installed and API Key set you can run the app
+ ```bash
+flutter run
+```
