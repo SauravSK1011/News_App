@@ -1,9 +1,9 @@
 # **News App**
-<img src=Home_page_img.png width="200"> <img src=Home_page_img2.png width="200">
-<img src=Search_img.png width="200">
-<img src=img1.png width="200">
-<img src=img2.png width="200">
-<img src=img3.png width="200">
+<img src=news_app/Home_page_img.png width="200"> <img src=news_app/Home_page_img2.png width="200">
+<img src=news_app/Search_img.png width="200">
+<img src=news_app/img1.png width="200">
+<img src=news_app/img2.png width="200">
+<img src=news_app/img3.png width="200">
 
 
 ## About this project
