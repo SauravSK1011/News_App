@@ -6,6 +6,8 @@
 <img src=news_app/img3.png width="200">
 
 
+## Download App :- https://drive.google.com/drive/folders/12j8ZePOUWyjJ5fhh_Iq58dPjx1WwdNlT?usp=sharing
+
 ## About this project
 This is a News App created using Flutter and NewsApi.\
 In This Flutter News App user can see top headlines on the home page and user have 4 options search, categories, news in india, news in wrold
@@ -18,7 +20,6 @@ using this app user can Follow the latest news.
  - [cached_network_image](https://pub.dev/packages/cached_network_image)
 
 
-Download App :- https://drive.google.com/file/d/1ojTaCJrfJmOQXLOagRcggzdyLdkoDyqA/view?usp=sharing
 
 ## Installation
 
