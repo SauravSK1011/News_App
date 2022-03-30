@@ -18,6 +18,7 @@ using this app user can Follow the latest news.
  - [cached_network_image](https://pub.dev/packages/cached_network_image)
 
 
+Download App :- https://drive.google.com/file/d/1ojTaCJrfJmOQXLOagRcggzdyLdkoDyqA/view?usp=sharing
 
 ## Installation
 
